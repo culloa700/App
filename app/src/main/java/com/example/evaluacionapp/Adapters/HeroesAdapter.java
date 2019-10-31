@@ -39,7 +39,7 @@ public class HeroesAdapter extends RecyclerView.Adapter<HeroesAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.data(list.get(position).getImage(), list.get(position).getName(), list.get(position).getDetail(), listener);
+        holder.data(list.get(position).getImage(), list.get(position).getName(), list.get(position).getDetail(), list.get(position).getExt(), listener);
     }
 
     @Override
@@ -60,8 +60,8 @@ public class HeroesAdapter extends RecyclerView.Adapter<HeroesAdapter.ViewHolder
             textViewDetailHero = itemView.findViewById(R.id.textViewHeroDetail);
         }
 
-        private void data(String image, String name, String detail, final OnItemClickListener listener){
-            Picasso.get().load(image + ".jpg").fit().centerCrop().into(imageViewHero);
+        private void data(String image, String name, String detail, String ext, final OnItemClickListener listener){
+            Picasso.get().load(image + "." + ext).fit().centerCrop().into(imageViewHero);
             textViewNameHero.setText(name);
             if(detail.isEmpty())
                 textViewDetailHero.setText("Sin descripcion");
@@ -71,7 +71,7 @@ public class HeroesAdapter extends RecyclerView.Adapter<HeroesAdapter.ViewHolder
             constraintLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    listener.onItemClick(getAdapterPosition());
+                    listener.onItemClick(getLayoutPosition());
                 }
             });
         }

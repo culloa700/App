@@ -12,12 +12,15 @@ public class ListHeroes {
     private String detail;
     @SerializedName("path")
     private String image;
+    @SerializedName("extension")
+    private String ext;
 
-    public ListHeroes(String idHero, String name, String detail, String image) {
+    public ListHeroes(String idHero, String name, String detail, String image, String ext) {
         this.idHero = idHero;
         this.name = name;
         this.detail = detail;
         this.image = image;
+        this.ext = ext;
     }
 
     public String getIdHero() {
@@ -50,5 +53,13 @@ public class ListHeroes {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getExt() {
+        return ext;
+    }
+
+    public void setExt(String ext) {
+        this.ext = ext;
     }
 }

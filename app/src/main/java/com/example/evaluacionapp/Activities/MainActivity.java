@@ -120,11 +120,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         HeroesAdapter adapter = new HeroesAdapter(list, R.layout.hero_list_layout, new HeroesAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
+                Preload();
+                Toast.makeText(MainActivity.this, "position " + position, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, DetailHeroActivity.class);
                 intent.putExtra("image", list.get(position).getImage());
-                intent.putExtra("description", list.get(position).getDetail());
+                intent.putExtra("descriptions", list.get(position).getDetail());
+                intent.putExtra("ext", list.get(position).getExt());
                 startActivity(intent);
                 overridePendingTransition(R.anim.transition, R.anim.transitionout);
+                preloadFragment.dismiss();
             }
         });
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
@@ -157,11 +161,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 JSONObject jsonResults = results.getJSONObject(i);
                                 JSONObject jsonThumbnail = results.getJSONObject(i).getJSONObject("thumbnail");
                                 String path = jsonThumbnail.getString("path");
+                                String ext = jsonThumbnail.getString("extension");
                                 JSONObject jsonParse = new JSONObject();
                                 jsonParse.put("id", jsonResults.getString("id"));
                                 jsonParse.put("name", jsonResults.getString("name"));
                                 jsonParse.put("description", jsonResults.getString("description"));
                                 jsonParse.put("path", path);
+                                jsonParse.put("extension", ext);
                                 json.put(jsonParse);
                             }
                             //el json generado se inserta a la lista por medio de gson

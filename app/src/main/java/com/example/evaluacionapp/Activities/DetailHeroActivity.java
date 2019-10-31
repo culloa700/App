@@ -46,7 +46,7 @@ public class DetailHeroActivity extends AppCompatActivity implements View.OnClic
         buttonClose.setOnClickListener(this);
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            setData(extras.getString("image"), extras.getString("description"));
+            setData(extras.getString("image"), extras.getString("descriptions"), extras.getString("ext"));
         }
     }
 
@@ -55,8 +55,8 @@ public class DetailHeroActivity extends AppCompatActivity implements View.OnClic
         onBackPressed();
     }
 
-    private void setData(String image, String description){
-        Picasso.get().load(image + ".jpg").fit().centerCrop().into(imageViewDetail);
+    private void setData(String image, String description, String ext){
+        Picasso.get().load(image + "." + ext).fit().centerCrop().into(imageViewDetail);
         if(description.isEmpty())
             textViewDetail.setText(R.string.emptyDescription);
         else
