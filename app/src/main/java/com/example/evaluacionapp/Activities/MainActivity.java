@@ -121,7 +121,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onItemClick(int position) {
                 Preload();
-                Toast.makeText(MainActivity.this, "position " + position, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, DetailHeroActivity.class);
                 intent.putExtra("image", list.get(position).getImage());
                 intent.putExtra("descriptions", list.get(position).getDetail());
