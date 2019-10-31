@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/Widget.MaterialComponents.CardView"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="240dp"
     android:layout_margin="8dp"
     android:orientation="vertical">
 
@@ -17,7 +17,7 @@
         <ImageView
             android:id="@+id/imageViewHero"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="150dp"
             android:src="@drawable/marvel"
             android:scaleType="centerCrop"/>
 

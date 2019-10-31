@@ -9,6 +9,7 @@
     <string name="btnGetin">Entrar</string>
     <string name="iHaveAccount">¿Ya tienes una cuenta?</string>
     <string name="register">No tienes cuenta? Regístrate!</string>
+    <string name="logOff">Cerrar sesión </string>
 
     <!--    strings activity register-->
     <string name="btnRegister">Regístrate</string>
