@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Heroes</string>
+
+    <!--    hints-->
+    <string name="inputEmail">Correo Electrónico</string>
+    <string name="inputPassword">Contraseña</string>
+    <string name="inputConfirmPassword">Confirmar Contraseña</string>
+    <!--    strings activity login-->
+    <string name="btnGetin">Entrar</string>
+    <string name="iHaveAccount">¿Ya tienes una cuenta?</string>
+    <string name="register">No tienes cuenta? Regístrate!</string>
+
+    <!--    strings activity register-->
+    <string name="btnRegister">Regístrate</string>
+    <string name="charactersPassword">La contraseña debe ser mayor a 6 dígitos</string>
+
+    <!--    strings activity detailHero-->
+    <string name="emptyDescription">Este héroe no cuenta con descripción</string>
+    <string name="description">Description:</string>
+    <!--    mensajes de error-->
+    <string name="msgInputEmpty">No puede estar vacío  </string>
+    <string name="msgEnterEmail">Ingrese un correo electrónico</string>
+    <string name="msgLoginError">Error al iniciar sesión </string>
+    <string name="msgMatchPassword">Las contraseñas deben coincidir</string>
+    <string name="msgSuccssefulRegister">Se ha registrado con éxito </string>
+    <string name="msgErrorRegister">Error al registrarse. Verifique sus datos</string>
+</resources>
