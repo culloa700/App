@@ -1,5 +1,5 @@
 # AppHeroes
-App que muestra super hereoes de marve
+App que muestra los super hereoes de marvel...
 
 ## Estructura
 
